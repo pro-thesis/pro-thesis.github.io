@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playtests de jeux / Thèse professionnelle</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 50px;
+			font-size: 1.1rem;
+        }
+        .step {
+            margin-bottom: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .form-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        .form-header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 20px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            margin-top: 20px;
+        }
+        #counter {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .form-check-inline {
+            display: flex;
+            align-items: center;
+        }
+        .form-check-input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-9">
+            <div class="form-container">
+
+                <div class="form-header text-center">
+                    <h3>Playtests de jeux / Thèse professionnelle</h3>
+                </div>
+				
+				<div>
+					Bonjour ! Vous trouverez sur la suite de cette page le protocole de playtests qui m’aideront à écrire ma thèse professionnelle.<br><br>
+					Lorsque vous complétez une étape (et pas avant), cliquez sur la case à cocher correspondante afin d’avoir accès à l’étape suivante.<br><br>
+					Le temps total pris par cette enquête est d’environ 2h.
+					<br><br><b>Merci beaucoup</b> de prendre le temps pour ces tests !<br>
+					<br>Hugo
+				</div>
+				
+				<hr>
+				
+                <!-- Counter Display -->
+                <div class="text-center mb-4">
+                    <p>Avancée : Vous êtes à l’étape <span id="counter">1</span>/9</p>
+                </div>
+				
+				<hr>
+
+                <form id="fruit-form">
+                    <div class="step" id="step1">
+						Étape 1 : Jouez à <a href="https://www.telephone.quest/" target="_blank"><b>L’enquête du Téléphone</b></a> (1h environ)
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="fruit1" onclick="toggleStep(2, this)">
+                            <label for="fruit1" class="form-check-label">J’ai fini de jouer</label>
+                        </div>
+                    </div>
+
+                    <div class="step hidden" id="step2">
+						Étape 2 : <a href="https://framaforms.org/playtest-lenquete-du-telephone-1726834030" target="_blank">Remplissez ce questionnaire</a>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="fruit2" onclick="toggleStep(3, this)">
+                            <label for="fruit2" class="form-check-label">J’ai rempli le formulaire sur L’enquête du Téléphone</label>
+                        </div>
+                    </div>
+
+                    <div class="step hidden" id="step3">
+						Étape 3 : Jouez à <a href="https://foulepopulaire.fr/play" target="_blank"><b>Foule Populaire</b></a> (5 à 10 minutes environ)
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="fruit3" onclick="toggleStep(4, this)">
+                            <label for="fruit3" class="form-check-label">J’ai fini de jouer</label>
+                        </div>
+                    </div>
+
+                    <div class="step hidden" id="step4">
+						Étape 4 : <a href="https://framaforms.org/playtest-foule-populaire-1728047381" target="_blank">Remplissez ce questionnaire</a>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="fruit4" onclick="toggleStep(5, this)">
+                            <label for="fruit4" class="form-check-label">J’ai rempli le questionnaire sur Foule Populaire</label>
+                        </div>
+                    </div>
+
+                    <div class="step hidden" id="step5">
+						Étape 5 : Jouez à <a href="https://uniondelagauche.itch.io/lecoeuragauche" target="_blank"><b>Le Cœur à Gauche</b></a> (15 minutes environ)
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="fruit5" onclick="toggleStep(6, this)">
+                            <label for="fruit5" class="form-check-label">J’ai fini de jouer</label>
+                        </div>
+                    </div>
+
+                    <div class="step hidden" id="step6">
+						Étape 6 : <a href="https://framaforms.org/playtest-le-coeur-a-gauche-1728047259" target="_blank">Remplissez ce questionnaire</a>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="fruit6" onclick="toggleStep(7, this)">
+                            <label for="fruit6" class="form-check-label">J’ai rempli le questionnaire sur Le Cœur à Gauche</label>
+                        </div>
+                    </div>
+
+                    <div class="step hidden" id="step7">
+						Étape 7 : Jouez à <a href="https://docgeraud.itch.io/barrage-populaire" target="_blank"><b>Barrage Populaire</b></a> (5 minutes environ)
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="fruit7" onclick="toggleStep(8, this)">
+                            <label for="fruit7" class="form-check-label">J’ai fini de jouer à Barrage Populaire</label>
+                        </div>
+                    </div>
+
+                    <div class="step hidden" id="step8">
+						Étape 8 : <a href="https://framaforms.org/playtest-barrage-populaire-1728047687" target="_blank">Remplissez ce questionnaire</a>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="fruit8" onclick="toggleStep(9, this)">
+                            <label for="fruit8" class="form-check-label">J’ai rempli le questionnaire sur Barrage Populaire</label>
+                        </div>
+                    </div>
+
+                    <div class="step hidden" id="step9">
+						Étape finale : <a href="https://framaforms.org/playtests-conclusion-1728050015" target="_blank">Remplissez le questionnaire final de cette enquête</a>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="fruit9" onclick="toggleStep(10, this)">
+                            <label for="fruit9" class="form-check-label">J’ai terminé</label>
+                        </div>
+                    </div>
+					
+                    <div class="step hidden" id="step10">
+						<h4>Merci beaucoup d’avoir participé à cette enquête !</h4>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Initialize counter
+    let checkedCount = 1;
+
+    // Increment or decrement counter when a checkbox is checked or unchecked
+    function incrementCounter(checkbox) {
+        if (checkbox.checked) {
+            checkedCount++;
+        } else {
+            checkedCount--;
+        }
+        document.getElementById('counter').innerText = checkedCount;
+        saveCheckboxState();
+    }
+
+    // Show or hide the next step when the current checkbox is checked or unchecked
+    function toggleStep(stepNumber, checkbox) {
+        var nextStep = document.getElementById('step' + stepNumber);
+        if (checkbox.checked) {
+            if (nextStep) {
+                nextStep.classList.remove('hidden');
+            }
+        } else {
+            // Hide all subsequent steps and uncheck their checkboxes
+            for (let i = stepNumber; i <= 10; i++) {
+                let step = document.getElementById('step' + i);
+                if (step) {
+                    step.classList.add('hidden');
+                    let stepCheckbox = step.querySelector('input[type="checkbox"]');
+                    if (stepCheckbox) {
+                        stepCheckbox.checked = false;
+                    }
+                }
+            }
+        }
+        incrementCounter(checkbox);
+        saveCheckboxState();
+    }
+
+    // Save checkbox states in localStorage
+    function saveCheckboxState() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach((checkbox, index) => {
+            localStorage.setItem('checkbox' + (index + 1), checkbox.checked);
+        });
+        localStorage.setItem('checkedCount', checkedCount);
+    }
+
+    // Load checkbox states from localStorage
+    function loadCheckboxState() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach((checkbox, index) => {
+            const checked = localStorage.getItem('checkbox' + (index + 1)) === 'true';
+            checkbox.checked = checked;
+            if (checked) {
+                toggleStep(index + 2, checkbox); // Reveal next step if current checkbox is checked
+            }
+        });
+        checkedCount = parseInt(localStorage.getItem('checkedCount')) || 1;
+        document.getElementById('counter').innerText = checkedCount;
+    }
+
+    // Load saved checkbox states when the page is loaded
+    window.onload = function() {
+        loadCheckboxState();
+    };
+</script>
+
+</body>
+</html>
